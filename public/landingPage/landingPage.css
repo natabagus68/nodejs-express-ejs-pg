@@ -1,0 +1,39 @@
+.background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-image: url("https://images.unsplash.com/photo-1542181961-9590d0c79dab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+}
+
+.navCenter {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+  border-top: 4px solid rgb(145, 113, 25);
+  border-bottom: 4px solid rgb(145, 113, 25);
+  display: flex;
+  justify-content: center;
+}
+
+.ancor {
+  font-family: "Bebas Neue", cursive;
+  font-size: 50px;
+  color: rgb(145, 113, 25);
+  margin-left: 20px;
+  margin-right: 20px;
+  text-decoration: none;
+  text-emphasis: none;
+  transition: 0.4s;
+}
+
+.ancor:hover {
+  transform: scale(2);
+  color: rgb(145, 113, 25);
+}

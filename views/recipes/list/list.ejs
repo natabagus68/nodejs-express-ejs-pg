@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../public/chefs/navbar/navbar.css" />
+    <link rel="stylesheet" href="../../../public/recipes/content.css" />
+
+    <title>Recipes List</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-icon" href="/">Partner Chefs</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>List Recipe</h1>
+      <a href="/recipes/add" class="btn btn-primary mt-3">Add New Recipe</a>
+      <form action="/recipes" method="get">
+        <div class="input-group mb-3 mt-4 search">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search Recipes"
+            name="search"
+          />
+          <button class="btn btn-primary" type="submit">
+            Search
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+      <table class="table table-striped mt-5">
+        <thead>
+          <th>No</th>
+          <th>Name</th>
+          <th>Duration</th>
+          <th>Category</th>
+          <th>Total Vote</th>
+          <th>Action</th>
+        </thead>
+
+        <tbody>
+          <% data.forEach((e, i) => { %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= e.name %></td>
+            <td><%= e.duration %></td>
+            <td><%= e.category %></td>
+            <td><%= e.totalVote %></td>
+            <td>
+              <a href="/recipes/<%= e.id %>" class="btn btn-outline-secondary"
+                >Read More</a
+              >
+              <a
+                href="/recipes/<%= e.id %>/edit"
+                class="btn btn-outline-secondary"
+                >Edit</a
+              >
+              <a
+                href="/recipes/<%= e.id %>/delete"
+                class="btn btn-outline-danger"
+                >Delete</a
+              >
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

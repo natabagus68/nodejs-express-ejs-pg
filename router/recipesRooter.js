@@ -1,0 +1,12 @@
+const express = require("express");
+const router = express.Router();
+const ControllerRecipes = require("../controllers/recipes");
+router.get("/", ControllerRecipes.toRecipesList);
+router.get("/add", ControllerRecipes.toAdd);
+router.post("/add", ControllerRecipes.addRecipe);
+router.get("/:id", ControllerRecipes.readMore);
+router.get("/:id/edit", ControllerRecipes.toFormEdit);
+router.post("/:id/edit", ControllerRecipes.update);
+router.get("/:id/delete", ControllerRecipes.deleteRecipe);
+router.get("/:id/vote", ControllerRecipes.vote);
+module.exports = router;
